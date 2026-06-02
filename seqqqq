@@ -1,0 +1,150 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Sequence - Inscription">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1"
+      tooltips="1" connect="1" arrows="1" fold="1"
+      page="1" pageScale="1" pageWidth="1600" pageHeight="1200">
+
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Participants -->
+
+        <mxCell id="p1" value="Patient"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;"
+          vertex="1" parent="1">
+          <mxGeometry x="50" y="40" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p2" value="Frontend"
+          style="rounded=1;whiteSpace=wrap;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="250" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p3" value="AuthController"
+          style="rounded=1;whiteSpace=wrap;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p4" value="UserService"
+          style="rounded=1;whiteSpace=wrap;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p5" value="PostgreSQL"
+          style="shape=cylinder3;whiteSpace=wrap;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="1030" y="40" width="100" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Lifelines -->
+
+        <mxCell id="l1" value=""
+          style="dashed=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="70" y="120" width="1" height="700" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l2" value=""
+          style="dashed=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="310" y="100" width="1" height="720" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l3" value=""
+          style="dashed=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="570" y="100" width="1" height="720" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l4" value=""
+          style="dashed=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="820" y="100" width="1" height="720" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l5" value=""
+          style="dashed=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="1080" y="110" width="1" height="710" as="geometry"/>
+        </mxCell>
+
+        <!-- Messages -->
+
+        <mxCell id="m1"
+          value="Saisir informations"
+          edge="1" parent="1"
+          source="p1" target="p2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m2"
+          value="POST /register"
+          edge="1" parent="1"
+          source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m3"
+          value="registerUser()"
+          edge="1" parent="1"
+          source="p3" target="p4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m4"
+          value="Verifier email"
+          edge="1" parent="1"
+          source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m5"
+          value="Email libre"
+          edge="1" parent="1"
+          source="p5" target="p4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m6"
+          value="Créer User(role=patient)"
+          edge="1" parent="1"
+          source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m7"
+          value="Utilisateur créé"
+          edge="1" parent="1"
+          source="p5" target="p4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m8"
+          value="Succès"
+          edge="1" parent="1"
+          source="p4" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m9"
+          value="200 OK"
+          edge="1" parent="1"
+          source="p3" target="p2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m10"
+          value="Compte créé"
+          edge="1" parent="1"
+          source="p2" target="p1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
