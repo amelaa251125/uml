@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Title -->
+    <mxCell id="title" value="Diagramme de Séquence — Prise de Rendez-vous (FREYA)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="10" width="1200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ===== LIFELINES ===== -->
+    <!-- Patient -->
+    <mxCell id="ll_patient_box" value="Patient" style="shape=mxgraph.uml.actor2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="100" y="60" width="60" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_patient" value="" style="endArrow=none;dashed=1;strokeColor=#6c8ebf;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="130" y="140" /><mxPoint x="130" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Frontend React -->
+    <mxCell id="ll_front_box" value="Frontend React" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="310" y="80" width="130" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_front" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="120" /><mxPoint x="375" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Backend API -->
+    <mxCell id="ll_back_box" value="Backend API&#xa;(Node.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="560" y="80" width="130" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_back" value="" style="endArrow=none;dashed=1;strokeColor=#82b366;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="120" /><mxPoint x="625" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Auth Middleware -->
+    <mxCell id="ll_auth_box" value="Auth Middleware" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="780" y="80" width="130" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_auth" value="" style="endArrow=none;dashed=1;strokeColor=#d6b656;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="845" y="120" /><mxPoint x="845" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Database -->
+    <mxCell id="ll_db_box" value="Base de données&#xa;(PostgreSQL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="1000" y="80" width="130" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_db" value="" style="endArrow=none;dashed=1;strokeColor=#666666;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="120" /><mxPoint x="1065" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- Médecin -->
+    <mxCell id="ll_doctor_box" value="Médecin" style="shape=mxgraph.uml.actor2;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="1240" y="60" width="60" height="80" as="geometry" />
+    </mxCell>
+    <mxCell id="ll_doctor" value="" style="endArrow=none;dashed=1;strokeColor=#82b366;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1270" y="140" /><mxPoint x="1270" y="1100" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- ===== MESSAGES ===== -->
+
+    <!-- 1. Patient searches doctor -->
+    <mxCell id="m1" value="1. Rechercher un médecin (spécialité, wilaya)" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="130" y="165" /><mxPoint x="375" y="165" /></Array></mxGeometry>
+    </mxCell>
+
+    <mxCell id="m2" value="2. GET /api/doctors?specialite=X&amp;wilaya=Y" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="195" /><mxPoint x="625" y="195" /></Array></mxGeometry>
+    </mxCell>
+
+    <mxCell id="m3" value="3. Vérifier JWT token" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="225" /><mxPoint x="845" y="225" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m3r" value="Token valide" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="845" y="245" /><mxPoint x="625" y="245" /></Array></mxGeometry>
+    </mxCell>
+
+    <mxCell id="m4" value="4. SELECT doctors WHERE..." style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="275" /><mxPoint x="1065" y="275" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m4r" value="Liste médecins" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="295" /><mxPoint x="625" y="295" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m4b" value="Résultats médecins" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="315" /><mxPoint x="375" y="315" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m4c" value="Afficher liste médecins" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="335" /><mxPoint x="130" y="335" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- 5. Patient selects doctor and views availabilities -->
+    <mxCell id="sep1" value="Sélection du médecin et consultation des disponibilités" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="100" y="355" width="1220" height="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="m5" value="5. Sélectionner médecin — voir profil" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="130" y="390" /><mxPoint x="375" y="390" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m6" value="6. GET /api/doctors/:id/availabilities" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="415" /><mxPoint x="625" y="415" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m7" value="7. SELECT availability WHERE doctor_id=..." style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="440" /><mxPoint x="1065" y="440" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m7r" value="Créneaux disponibles" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="460" /><mxPoint x="375" y="460" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- 8. Patient books appointment -->
+    <mxCell id="sep2" value="Réservation du rendez-vous" style="text;html=1;strokeColor=#006EAF;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="100" y="480" width="1220" height="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="m8" value="8. Choisir créneau + saisir motif" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="130" y="515" /><mxPoint x="375" y="515" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m9" value="9. POST /api/appointments { doctorId, date, time, motif }" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="375" y="545" /><mxPoint x="625" y="545" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m10" value="10. Vérifier JWT (rôle patient requis)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="575" /><mxPoint x="845" y="575" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m10r" value="Autorisé" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="845" y="595" /><mxPoint x="625" y="595" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m11" value="11. Vérifier disponibilité créneau (pas de doublon)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="625" /><mxPoint x="1065" y="625" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m11r" value="Créneau libre" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="645" /><mxPoint x="625" y="645" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m12" value="12. INSERT INTO appointments (status=pending)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="675" /><mxPoint x="1065" y="675" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m12r" value="RDV créé (id)" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="695" /><mxPoint x="625" y="695" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- 13. Notifications -->
+    <mxCell id="sep3" value="Envoi des notifications" style="text;html=1;strokeColor=#67AB9F;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="100" y="715" width="1220" height="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="m13" value="13. INSERT notification (patient) — type: new_appointment" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="750" /><mxPoint x="1065" y="750" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m14" value="14. INSERT notification (médecin) — type: new_appointment" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="780" /><mxPoint x="1065" y="780" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m14r" value="Notifications insérées" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1065" y="800" /><mxPoint x="625" y="800" /></Array></mxGeometry>
+    </mxCell>
+
+    <mxCell id="m15" value="15. Réponse 201 — RDV créé (status: pending)" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="830" /><mxPoint x="130" y="830" /></Array></mxGeometry>
+    </mxCell>
+
+    <!-- 16. Doctor confirms -->
+    <mxCell id="sep4" value="Confirmation par le médecin" style="text;html=1;strokeColor=#67AB9F;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="100" y="850" width="1220" height="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="m16" value="16. Voir nouveau RDV en attente" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1270" y="885" /><mxPoint x="625" y="885" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m17" value="17. PATCH /api/appointments/:id/status { status: confirmed }" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1270" y="915" /><mxPoint x="625" y="915" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m18" value="18. UPDATE appointments SET status=confirmed" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="945" /><mxPoint x="1065" y="945" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m19" value="19. INSERT notification (patient) — appointment_update: confirmed" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="975" /><mxPoint x="1065" y="975" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="m20" value="20. ✅ Patient reçoit notification — RDV confirmé" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="625" y="1005" /><mxPoint x="130" y="1005" /></Array></mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
