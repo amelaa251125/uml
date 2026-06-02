@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Titre -->
+    <mxCell id="title" value="Dépôt de résultats par le laboratoire" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="200" y="20" width="600" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SWIMLANES -->
+    <!-- ============================================================ -->
+
+    <!-- Swimlane: Laboratoire -->
+    <mxCell id="lane_lab" value="Laboratoire" style="swimlane;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="30" y="70" width="180" height="1500" as="geometry" />
+    </mxCell>
+
+    <!-- Swimlane: Système -->
+    <mxCell id="lane_sys" value="Système" style="swimlane;startSize=40;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="220" y="70" width="180" height="1500" as="geometry" />
+    </mxCell>
+
+    <!-- Swimlane: Base de données -->
+    <mxCell id="lane_db" value="Base de données" style="swimlane;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="410" y="70" width="180" height="1500" as="geometry" />
+    </mxCell>
+
+    <!-- Swimlane: Patient -->
+    <mxCell id="lane_patient" value="Patient" style="swimlane;startSize=40;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="600" y="70" width="180" height="1500" as="geometry" />
+    </mxCell>
+
+    <!-- Swimlane: Médecin -->
+    <mxCell id="lane_med" value="Médecin" style="swimlane;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="790" y="70" width="180" height="1500" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- NOEUD INITIAL -->
+    <!-- ============================================================ -->
+    <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="295" y="120" width="30" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1 : Connexion au tableau de bord -->
+    <!-- ============================================================ -->
+    <mxCell id="sec1_label" value="1 — Connexion au tableau de bord" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="162" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A1: Connexion (email, mdp) -->
+    <mxCell id="a1" value="Connexion&#xa;(email, mdp)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="40" y="190" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- A2: Vérifier identifiants / JWT (role: lab) -->
+    <mxCell id="a2" value="Vérifier identifiants&#xa;→ JWT (role: lab)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="230" y="190" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep1" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="265" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2 : Recherche du patient -->
+    <!-- ============================================================ -->
+    <mxCell id="sec2_label" value="2 — Recherche du patient" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="280" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A3: Saisit nom / email patient -->
+    <mxCell id="a3" value="Saisit nom / email patient" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="40" y="310" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- A4: SELECT users (role=patient) / Liste patients -->
+    <mxCell id="a4" value="SELECT users (role=patient)&#xa;Liste patients" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+      <mxGeometry x="420" y="310" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep2" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="385" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3 : Préparation du résultat -->
+    <!-- ============================================================ -->
+    <mxCell id="sec3_label" value="3 — Préparation du résultat" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="400" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A5: Sélectionne patient + titre + description -->
+    <mxCell id="a5" value="Sélectionne patient&#xa;Titre + description&#xa;Attache fichier PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="40" y="430" width="150" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- A6: Encodé en base64 -->
+    <mxCell id="a6" value="Encodé en base64" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="230" y="430" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep3" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="510" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4 : Envoi et enregistrement -->
+    <!-- ============================================================ -->
+    <mxCell id="sec4_label" value="4 — Envoi et enregistrement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="525" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A7: Valide l'envoi -->
+    <mxCell id="a7" value="Valide l'envoi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="40" y="555" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- A8: Vérif. profil laboratoire + INSERT lab_result -->
+    <mxCell id="a8" value="Vérif. profil laboratoire&#xa;INSERT lab_result&#xa;→ id résultat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+      <mxGeometry x="420" y="555" width="150" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- A9: Résultat enregistré -->
+    <mxCell id="a9" value="Résultat enregistré" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+      <mxGeometry x="40" y="645" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep4" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="720" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5 : Notification du patient -->
+    <!-- ============================================================ -->
+    <mxCell id="sec5_label" value="5 — Notification du patient" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="735" width="200" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A10: Notif. résultat disponible (Patient) -->
+    <mxCell id="a10" value="Notif. résultat disponible" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+      <mxGeometry x="610" y="760" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep5" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="835" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6 : Consultation par le patient -->
+    <!-- ============================================================ -->
+    <mxCell id="sec6_label" value="6 — Consultation par le patient" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="35" y="850" width="220" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- A11: Accède à ses résultats (Patient) -->
+    <mxCell id="a11" value="Accède à ses résultats" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+      <mxGeometry x="610" y="880" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- A12: SELECT lab_results / Résultats + PDF -->
+    <mxCell id="a12" value="SELECT lab_results&#xa;Résultats + PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+      <mxGeometry x="420" y="880" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- A13: Affiche résultats + PDF (Patient) -->
+    <mxCell id="a13" value="Affiche résultats + PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+      <mxGeometry x="610" y="960" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Séparateur -->
+    <mxCell id="sep6" value="" style="line;strokeWidth=1;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="30" y="1035" width="940" height="10" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- OPTIONNEL : Transfert à un médecin -->
+    <!-- ============================================================ -->
+    <mxCell id="sec_opt_label" value="Optionnel — Transfert à un médecin" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=2;fontSize=10;fontColor=#d79b00;" vertex="1" parent="1">
+      <mxGeometry x="35" y="1050" width="230" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- D_opt: Décision transférer ? -->
+    <mxCell id="d_opt" value="Transférer&#xa;les résultats ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+      <mxGeometry x="620" y="1080" width="120" height="70" as="geometry" />
+    </mxCell>
+
+    <!-- A_opt: Transfert résultats au médecin -->
+    <mxCell id="a_opt" value="Transférer résultats&#xa;au Médecin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+      <mxGeometry x="800" y="1080" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- NOEUD FINAL -->
+    <!-- ============================================================ -->
+    <mxCell id="end_outer" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="669" y="1200" width="42" height="42" as="geometry" />
+    </mxCell>
+    <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="1">
+      <mxGeometry x="675" y="1206" width="30" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ============================================================ -->
+    <!-- TRANSITIONS -->
+    <!-- ============================================================ -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="start" target="a1" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a1" target="a2" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a2" target="a3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a3" target="a4" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a4" target="a5" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a5" target="a6" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a6" target="a7" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a7" target="a8" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a8" target="a9" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a9" target="a10" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a10" target="a11" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a11" target="a12" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a12" target="a13" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a13" target="d_opt" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- d_opt → a_opt (Oui) -->
+    <mxCell id="e15" value="Oui" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="d_opt" target="a_opt" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- d_opt → end (Non) -->
+    <mxCell id="e16" value="Non" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="d_opt" target="end_outer" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- a_opt → end -->
+    <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="a_opt" target="end_outer" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
