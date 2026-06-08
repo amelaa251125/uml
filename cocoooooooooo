@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-08T00:00:00.000Z" agent="Gemini" version="21.0.0">
+  <diagram name="Diagramme de composants FREYA" id="freya-composants-v2">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="navigateur" value="Navigateur Web" style="shape=mxgraph.uml.component;fontSize=13;strokeColor=#000000;fillColor=#f5f5f5;whiteSpace=wrap;html=1;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="375" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bloc-frontend" value="Frontend (React Application)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#000000;fontSize=13;fontStyle=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="150" y="150" width="650" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="front-app" value="App.js / index.js" style="shape=mxgraph.uml.component;fontSize=12;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-frontend">
+          <mxGeometry x="30" y="50" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="front-pages" value="Pages&#xa;• Patient/Doctor/Lab Dashboards&#xa;• Profiles &amp; Messages&#xa;• Appointments &amp; Analyses" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" vertex="1" parent="bloc-frontend">
+          <mxGeometry x="220" y="50" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="front-components" value="Components&#xa;• Reusable UI&#xa;• Forms &amp; Modals" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" vertex="1" parent="bloc-frontend">
+          <mxGeometry x="450" y="50" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="front-store" value="Store&#xa;• Global State&#xa;• Context / Redux" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" vertex="1" parent="bloc-frontend">
+          <mxGeometry x="120" y="160" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="front-api" value="Services (api.js)&#xa;• Axios Client&#xa;• HTTP Requests API" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" vertex="1" parent="bloc-frontend">
+          <mxGeometry x="340" y="160" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="back-server" value="&lt;&lt;Entry Point&gt;&gt;&#xa;server.js" style="shape=mxgraph.uml.component;fontSize=13;strokeColor=#000000;fillColor=#e1f5fe;whiteSpace=wrap;html=1;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="375" y="550" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bloc-routes" value="Routes" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#000000;fontSize=13;fontStyle=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="150" y="680" width="650" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="route-index" value="index.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-routes">
+          <mxGeometry x="20" y="60" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="route-auth" value="auth.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-routes">
+          <mxGeometry x="140" y="60" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="route-doctors" value="doctors.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-routes">
+          <mxGeometry x="260" y="60" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="route-labo" value="labo.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-routes">
+          <mxGeometry x="390" y="60" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="route-laboratory" value="laboratory.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-routes">
+          <mxGeometry x="510" y="60" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bloc-controllers" value="Controllers" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#000000;fontSize=13;fontStyle=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="100" y="890" width="750" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl-auth" value="authController.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-controllers">
+          <mxGeometry x="20" y="60" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl-appt" value="appointmentController.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-controllers">
+          <mxGeometry x="165" y="60" width="165" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl-doc" value="doctorController.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-controllers">
+          <mxGeometry x="345" y="60" width="135" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl-msg" value="messageController.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-controllers">
+          <mxGeometry x="495" y="60" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl-other" value="otherControllers.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-controllers">
+          <mxGeometry x="650" y="60" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bloc-services" value="Services" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#000000;fontSize=13;fontStyle=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1100" width="870" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-auth" value="authService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="20" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-appt" value="appointmentService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="180" y="50" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-doc" value="doctorService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="360" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-msg" value="messageService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="520" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-admin" value="adminService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="700" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-notif" value="notificationService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="100" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-record" value="recordService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="350" y="140" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srv-review" value="reviewService.js" style="shape=mxgraph.uml.component;fontSize=11;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;" vertex="1" parent="bloc-services">
+          <mxGeometry x="590" y="140" width="150" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="comp-prisma" value="&lt;&lt;Data Access&gt;&gt;&#xa;Prisma Client" style="shape=mxgraph.uml.component;fontSize=13;strokeColor=#000000;fillColor=#e8f5e9;whiteSpace=wrap;html=1;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="375" y="1390" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-prisma" value="&lt;&lt;Configuration&gt;&gt;&#xa;schema.prisma" style="shape=mxgraph.uml.component;fontSize=12;strokeColor=#000000;fillColor=#ffffff;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="385" y="1510" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sgbd-postgres" value="PostgreSQL&#xa;(Database SGBD)" style="shape=mxgraph.uml.component;fontSize=13;strokeColor=#000000;fillColor=#efebe9;whiteSpace=wrap;html=1;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="375" y="1620" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-nav-front" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="navigateur" target="bloc-frontend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-front-server" value="HTTP Requests / REST API" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="front-api" target="back-server">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="500" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="link-server-routes" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="back-server" target="bloc-routes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-routes-ctrl" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bloc-routes" target="bloc-controllers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-ctrl-srv" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bloc-controllers" target="bloc-services">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-srv-prisma" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bloc-services" target="comp-prisma">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-prisma-schema" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.2;dashed=1;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="comp-prisma" target="schema-prisma">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link-schema-db" value="" style="endArrow=open;endFill=0;html=1;strokeColor=#000000;strokeWidth=1.5;endSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="schema-prisma" target="sgbd-postgres">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
