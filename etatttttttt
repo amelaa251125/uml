@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1300" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- TITRE -->
+    <mxCell id="t0" value="&lt;b&gt;&lt;font style='font-size:16px'&gt;Diagramme d'état général — Application FREYA&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;" vertex="1" parent="1">
+      <mxGeometry x="400" y="20" width="900" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : AUTHENTIFICATION                                -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_auth" value="Authentification" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="80" width="400" height="220" as="geometry" />
+    </mxCell>
+
+    <!-- état initial auth -->
+    <mxCell id="auth_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_auth">
+      <mxGeometry x="185" y="40" width="30" height="30" as="geometry" />
+    </mxCell>
+    <!-- Non connecté -->
+    <mxCell id="auth_off" value="Non connecté" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="z_auth">
+      <mxGeometry x="130" y="90" width="140" height="40" as="geometry" />
+    </mxCell>
+    <!-- Connecté -->
+    <mxCell id="auth_on" value="Connecté" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_auth">
+      <mxGeometry x="130" y="160" width="140" height="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ea1" value="" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="auth_init" target="auth_off" parent="z_auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="ea2" value="login() — JWT valide" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" source="auth_off" target="auth_on" parent="z_auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="ea3" value="logout()" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;" edge="1" source="auth_on" target="auth_off" parent="z_auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : COMPTE UTILISATEUR                              -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_user" value="Compte utilisateur (User)" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="480" y="80" width="480" height="220" as="geometry" />
+    </mxCell>
+
+    <mxCell id="u_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_user">
+      <mxGeometry x="30" y="85" width="30" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="u_inscrit" value="Inscrit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="z_user">
+      <mxGeometry x="80" y="80" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="u_actif" value="Actif" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_user">
+      <mxGeometry x="220" y="80" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="u_desactive" value="Désactivé" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="z_user">
+      <mxGeometry x="360" y="80" width="110" height="40" as="geometry" />
+    </mxCell>
+    <!-- Médecin en attente -->
+    <mxCell id="u_attente" value="En attente validation&lt;br&gt;(Médecin)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="z_user">
+      <mxGeometry x="220" y="155" width="110" height="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="eu1" value="" edge="1" source="u_init" target="u_inscrit" parent="z_user"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="eu2" value="register() patient" style="fontSize=10;" edge="1" source="u_inscrit" target="u_actif" parent="z_user"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="eu3" value="Admin approuve" style="fontSize=10;" edge="1" source="u_attente" target="u_actif" parent="z_user"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="eu4" value="register() médecin" style="fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" source="u_inscrit" target="u_attente" parent="z_user"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="eu5" value="Admin désactive" style="fontSize=10;" edge="1" source="u_actif" target="u_desactive" parent="z_user"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="eu6" value="Admin réactive" style="fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" source="u_desactive" target="u_actif" parent="z_user"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="415" y="145"/><mxPoint x="275" y="145"/></Array></mxGeometry></mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : RENDEZ-VOUS                                     -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_rdv" value="Rendez-vous (Appointment)" style="swimlane;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="340" width="700" height="260" as="geometry" />
+    </mxCell>
+
+    <mxCell id="r_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_rdv">
+      <mxGeometry x="25" y="105" width="30" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="r_pending" value="pending" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="z_rdv">
+      <mxGeometry x="80" y="100" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="r_confirmed" value="confirmed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_rdv">
+      <mxGeometry x="250" y="100" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="r_completed" value="completed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="z_rdv">
+      <mxGeometry x="430" y="100" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="r_cancelled" value="cancelled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="z_rdv">
+      <mxGeometry x="250" y="190" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="r_noshow" value="no_show" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="z_rdv">
+      <mxGeometry x="430" y="190" width="120" height="40" as="geometry" />
+    </mxCell>
+    <!-- état final rdv -->
+    <mxCell id="r_fin" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;aspect=fixed;" vertex="1" parent="z_rdv">
+      <mxGeometry x="611" y="108" width="30" height="30" as="geometry" />
+    </mxCell>
+
+    <mxCell id="er1" value="" edge="1" source="r_init" target="r_pending" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er2" value="Médecin / Labo confirme" style="fontSize=10;" edge="1" source="r_pending" target="r_confirmed" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er3" value="Consultation effectuée" style="fontSize=10;" edge="1" source="r_confirmed" target="r_completed" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er4" value="" edge="1" source="r_completed" target="r_fin" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er5" value="Patient / Médecin annule" style="fontSize=10;" edge="1" source="r_pending" target="r_cancelled" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er6" value="Annulation post-confirm" style="fontSize=10;" edge="1" source="r_confirmed" target="r_cancelled" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="er7" value="Patient absent" style="fontSize=10;" edge="1" source="r_confirmed" target="r_noshow" parent="z_rdv"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : ABONNEMENT MÉDECIN                              -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_sub" value="Abonnement médecin (Subscription)" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="780" y="340" width="560" height="260" as="geometry" />
+    </mxCell>
+
+    <mxCell id="s_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_sub">
+      <mxGeometry x="25" y="105" width="30" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="s_trial" value="trial" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="z_sub">
+      <mxGeometry x="80" y="100" width="100" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="s_active" value="active" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_sub">
+      <mxGeometry x="220" y="100" width="100" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="s_expired" value="expired" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="z_sub">
+      <mxGeometry x="360" y="100" width="100" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="s_cancelled" value="cancelled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="z_sub">
+      <mxGeometry x="220" y="190" width="100" height="40" as="geometry" />
+    </mxCell>
+    <!-- état final sub -->
+    <mxCell id="s_fin" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_sub">
+      <mxGeometry x="490" y="108" width="30" height="30" as="geometry" />
+    </mxCell>
+
+    <mxCell id="es1" value="" edge="1" source="s_init" target="s_trial" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es2" value="Paiement validé" style="fontSize=10;" edge="1" source="s_trial" target="s_active" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es3" value="Date fin atteinte" style="fontSize=10;" edge="1" source="s_active" target="s_expired" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es4" value="" edge="1" source="s_expired" target="s_fin" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es5" value="Médecin résilie" style="fontSize=10;" edge="1" source="s_active" target="s_cancelled" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es6" value="Résiliation essai" style="fontSize=10;" edge="1" source="s_trial" target="s_cancelled" parent="z_sub"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="es7" value="Renouvellement" style="fontSize=10;dashed=1;" edge="1" source="s_expired" target="s_active" parent="z_sub">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="410" y="80"/><mxPoint x="270" y="80"/></Array></mxGeometry>
+    </mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : DOSSIER MÉDICAL                                 -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_rec" value="Dossier médical (MedicalRecord)" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="640" width="560" height="180" as="geometry" />
+    </mxCell>
+
+    <mxCell id="rec_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_rec">
+      <mxGeometry x="25" y="80" width="30" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="rec_cree" value="créé" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="z_rec">
+      <mxGeometry x="90" y="75" width="100" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="rec_visible" value="visible patient" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_rec">
+      <mxGeometry x="240" y="75" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="rec_archive" value="archivé" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="z_rec">
+      <mxGeometry x="420" y="75" width="100" height="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="erec1" edge="1" source="rec_init" target="rec_cree" parent="z_rec"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="erec2" value="Médecin / Labo ajoute" style="fontSize=10;" edge="1" source="rec_cree" target="rec_visible" parent="z_rec"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="erec3" value="Dossier clôturé" style="fontSize=10;" edge="1" source="rec_visible" target="rec_archive" parent="z_rec"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ZONE : MESSAGE / CONVERSATION                          -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="z_msg" value="Message (Conversation / Message)" style="swimlane;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="640" y="640" width="700" height="180" as="geometry" />
+    </mxCell>
+
+    <mxCell id="msg_init" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="z_msg">
+      <mxGeometry x="25" y="80" width="30" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="msg_envoi" value="envoyé" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="z_msg">
+      <mxGeometry x="90" y="75" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg_lu" value="lu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="z_msg">
+      <mxGeometry x="260" y="75" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="msg_repondu" value="conversation active" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="z_msg">
+      <mxGeometry x="440" y="75" width="140" height="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="emsg1" edge="1" source="msg_init" target="msg_envoi" parent="z_msg"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="emsg2" value="isRead = true" style="fontSize=10;" edge="1" source="msg_envoi" target="msg_lu" parent="z_msg"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="emsg3" value="Nouveau message dans conv." style="fontSize=10;" edge="1" source="msg_lu" target="msg_repondu" parent="z_msg"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- LÉGENDE                                                -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <mxCell id="leg" value="&lt;b&gt;Légende :&lt;/b&gt;  ● État initial   ◉ État final   → Transition   - - → Transition optionnelle" style="text;html=1;strokeColor=#cccccc;fillColor=#f9f9f9;rounded=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="40" y="848" width="700" height="30" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
