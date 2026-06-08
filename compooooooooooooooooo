@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-08" version="21.0.0">
+  <diagram name="Diagramme de composants" id="composants-freya">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1"
+                  connect="1" arrows="1" fold="1" page="1" pageScale="1"
+                  pageWidth="1654" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ══════════════════════════════════════
+             PACKAGE : Navigateur (haut gauche)
+        ══════════════════════════════════════ -->
+        <mxCell id="navigateur" value="Navigateur" style="shape=folder;whiteSpace=wrap;html=1;
+               fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;
+               fontSize=12;fontStyle=1;tabWidth=42;tabHeight=14;
+               align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             PACKAGE : SGBD (bas gauche)
+        ══════════════════════════════════════ -->
+        <mxCell id="sgbd" value="SGBD" style="shape=folder;whiteSpace=wrap;html=1;
+               fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;
+               fontSize=12;fontStyle=1;tabWidth=32;tabHeight=14;
+               align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             COMPOSANT : Accueil (stéréotype + fichier)
+        ══════════════════════════════════════ -->
+        <mxCell id="accueil" value="&lt;&lt;Accueil&gt;&gt;&lt;br/&gt;&lt;b&gt;Accueil.php&lt;/b&gt;" style="shape=component;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="240" y="260" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             COMPOSANT PARENT : Boîte englobante connexion+inscription
+        ══════════════════════════════════════ -->
+        <mxCell id="parent_box" value="" style="swimlane;startSize=0;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               align=center;fontSize=11;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="200" height="190" as="geometry" />
+        </mxCell>
+        <!-- icône composant sur le coin du parent -->
+        <mxCell id="parent_icon" value="" style="shape=component;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="652" y="214" width="20" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Sous-composant : connexion -->
+        <mxCell id="connexion" value="&lt;&lt;connexion&gt;&gt;&lt;br/&gt;&lt;b&gt;connexion.php&lt;/b&gt;" style="shape=component;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="225" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Sous-composant : inscription -->
+        <mxCell id="inscription" value="&lt;&lt;inscription&gt;&gt;&lt;br/&gt;&lt;b&gt;inscription.php&lt;/b&gt;" style="shape=component;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="315" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             COMPOSANT : Profil
+        ══════════════════════════════════════ -->
+        <mxCell id="profil" value="&lt;b&gt;Profil&lt;/b&gt;&lt;br/&gt;profil.php" style="shape=component;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="780" y="260" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             INTERFACE : interface admin (reliée au SGBD)
+        ══════════════════════════════════════ -->
+        <mxCell id="iface_admin" value="&quot;Interface&quot;&lt;br/&gt;&lt;b&gt;interface admin&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;
+               shape=mxgraph.archimate3.application;whiteSpace=wrap;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;
+               arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="170" height="70" as="geometry" />
+        </mxCell>
+        <!-- On utilise un simple rectangle avec bordure pour imiter le style "nœud interface" de l'image -->
+        <mxCell id="iface_admin2" value="&quot;Interface&quot;&lt;br/&gt;&lt;b&gt;interface admin&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="170" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             INTERFACE : interface auxiliaire service
+        ══════════════════════════════════════ -->
+        <mxCell id="iface_aux" value="&quot;interface&quot;&lt;br/&gt;&lt;b&gt;interface auxiliaire&lt;br/&gt;service&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;
+               fillColor=#ffffff;strokeColor=#000000;
+               fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="255" width="175" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════
+             RELATIONS (dépendances en pointillés)
+        ══════════════════════════════════════ -->
+
+        <!-- 1. Navigateur → Accueil (dépendance usage) -->
+        <mxCell id="dep1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;
+               entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="navigateur" target="accueil" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 2. Navigateur → SGBD (dépendance) -->
+        <mxCell id="dep2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;
+               entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="navigateur" target="sgbd" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 3. SGBD → interface admin -->
+        <mxCell id="dep3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;
+               entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="sgbd" target="iface_admin2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 4. Accueil → composant parent (boîte connexion+inscription) -->
+        <mxCell id="dep4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;
+               entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="accueil" target="parent_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 5. composant parent → Profil -->
+        <mxCell id="dep5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;
+               entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="parent_box" target="profil" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 6. Profil → interface auxiliaire service -->
+        <mxCell id="dep6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;
+               dashed=1;endArrow=open;endFill=0;
+               strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;
+               entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="profil" target="iface_aux" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
