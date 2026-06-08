@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagramme de composants FREYA">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="frontend" value="&lt;b&gt;Frontend React&lt;/b&gt;&lt;br&gt;- Pages Patient&lt;br&gt;- Pages Médecin&lt;br&gt;- Pages Laboratoire&lt;br&gt;- Pages Admin&lt;br&gt;- API Service&lt;br&gt;- Auth Store"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="220" height="180" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="api" value="&lt;b&gt;API REST Express&lt;/b&gt;&lt;br&gt;- Routes Auth&lt;br&gt;- Routes Doctors&lt;br&gt;- Routes Laboratory&lt;br&gt;- Routes Appointments&lt;br&gt;- Routes Messages&lt;br&gt;- Routes Records&lt;br&gt;- Routes Reviews&lt;br&gt;- Routes Admin"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="340" y="220" width="240" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="controllers" value="&lt;b&gt;Controllers&lt;/b&gt;&lt;br&gt;AuthController&lt;br&gt;DoctorController&lt;br&gt;AppointmentController&lt;br&gt;MessageController&lt;br&gt;RecordController&lt;br&gt;ReviewController&lt;br&gt;AdminController"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="670" y="220" width="240" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="services" value="&lt;b&gt;Business Services&lt;/b&gt;&lt;br&gt;AuthService&lt;br&gt;DoctorService&lt;br&gt;AppointmentService&lt;br&gt;MessageService&lt;br&gt;RecordService&lt;br&gt;ReviewService&lt;br&gt;NotificationService"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="1000" y="220" width="250" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="security" value="&lt;b&gt;Security Layer&lt;/b&gt;&lt;br&gt;JWT Authentication&lt;br&gt;Role Verification&lt;br&gt;Authorization Middleware"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="1340" y="250" width="220" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="prisma" value="&lt;b&gt;Prisma ORM&lt;/b&gt;&lt;br&gt;Database Access&lt;br&gt;CRUD Operations&lt;br&gt;Query Management"
+                style="rounded=1;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="1650" y="250" width="220" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="db" value="&lt;b&gt;PostgreSQL Database&lt;/b&gt;&lt;br&gt;Users&lt;br&gt;Doctors&lt;br&gt;Patients&lt;br&gt;Appointments&lt;br&gt;Messages&lt;br&gt;MedicalRecords&lt;br&gt;Reviews&lt;br&gt;Notifications&lt;br&gt;Laboratories"
+                style="shape=cylinder;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="1960" y="220" width="250" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="frontend" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="api" target="controllers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" edge="1" parent="1" source="controllers" target="services">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" edge="1" parent="1" source="services" target="security">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" edge="1" parent="1" source="security" target="prisma">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" source="prisma" target="db">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
